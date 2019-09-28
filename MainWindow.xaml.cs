@@ -23,6 +23,14 @@ namespace MiniViewer
         public MainWindow()
         {
             InitializeComponent();
+            Topmost = true;
+        }
+
+        // Implemented so that if another window goes fullscreen and tries to become topmost this will take over topmost afterwards
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            var window = (Window)sender;
+            window.Topmost = true;
         }
     }
 }
