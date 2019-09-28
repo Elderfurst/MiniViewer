@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapplo.Windows" Version="0.11.6" />
+  </ItemGroup>
+
 </Project>

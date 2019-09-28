@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniViewer", "MiniViewer.csproj", "{AE87310E-B167-4D0F-9DB0-87F4AE5EA713}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE87310E-B167-4D0F-9DB0-87F4AE5EA713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE87310E-B167-4D0F-9DB0-87F4AE5EA713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE87310E-B167-4D0F-9DB0-87F4AE5EA713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE87310E-B167-4D0F-9DB0-87F4AE5EA713}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B1E6E71-5E88-4A1E-BF92-3D6A389AFD0E}
+	EndGlobalSection
+EndGlobal
