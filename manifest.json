@@ -1,0 +1,25 @@
+{
+    "name": "MiniViewer",
+    "version": "1.0",
+    "description": "A chrome extension that allows for picture in picture",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "picture-in-picture.html",
+        "default_icon": {
+            "16": "images/icons/pip-16.png",
+            "32": "images/icons/pip-32.png",
+            "48": "images/icons/pip-48.png",
+            "128": "images/icons/pip-128.png"
+        }
+    },
+    "icons": {
+        "16": "images/icons/pip-16.png",
+        "32": "images/icons/pip-32.png",
+        "48": "images/icons/pip-48.png",
+        "128": "images/icons/pip-128.png"
+    },
+    "manifest_version": 2
+  }
