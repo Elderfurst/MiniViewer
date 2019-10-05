@@ -1,31 +1,39 @@
 chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.sync.set(
         {
-            windowLocation: 'top-right',
-            width: 500,
-            height: 650
+            windowLocation: 'bottom-right',
+            width: 550,
+            height: 400
         });
 });
 
 chrome.browserAction.onClicked.addListener(tab => {
-
-    var locationPromise = chrome.storage.sync.get('windowLocation', function(result) {
-        // Default to bottom-right
-        return result.windowLocation || 'bottom-right';
+    // Build all async calls as promises to resolve them together and save callback hell
+    var locationPromise = new Promise(function(resolve) {
+        chrome.storage.sync.get('windowLocation', function(result) {
+            // Default to bottom-right
+            resolve(result.windowLocation || 'bottom-right');
+        });
     });
 
-    var widthPromise = chrome.storage.sync.get('width', function(result) {
-        // Default to 450 pixels
-        return result.width || 450;
+    var widthPromise = new Promise(function(resolve) {
+        chrome.storage.sync.get('width', function(result) {
+            // Default to 450 pixels
+            resolve(result.width || 450);
+        });
     });
 
-    var heightPromise = chrome.storage.sync.get('height', function(result) {
-        // Default to 600 pixels
-        return result.height || 600;
+    var heightPromise = new Promise(function(resolve) {
+        chrome.storage.sync.get('height', function(result) {
+            // Default to 600 pixels
+            resolve(result.height || 600);
+        });
     });
 
-    var displayInfoPromise = chrome.system.display.getInfo(function(displays) {
-        return displays[0].bounds;
+    var displayInfoPromise = new Promise(function(resolve) {
+        chrome.system.display.getInfo(function(displays) {
+            resolve(displays[0].bounds);
+        });
     });
 
     Promise.all([locationPromise, widthPromise, heightPromise, displayInfoPromise]).then(function(values) {
@@ -34,7 +42,7 @@ chrome.browserAction.onClicked.addListener(tab => {
         var windowHeight = values[2];
         var windowBounds = values[3];
 
-        // Default to 50 pixels from the top and left
+        // Offset by 50 from any given edge by default
         var offset = 50;
         var windowLeft = offset;
         var windowTop = offset;
