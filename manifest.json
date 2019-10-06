@@ -20,7 +20,7 @@
         "48": "images/icons/pip-48.png",
         "128": "images/icons/pip-128.png"
     },
-    "permissions": [ "<all_urls>" ],
+    "permissions": [ "activeTab" ],
     "manifest_version": 2
   }
   
