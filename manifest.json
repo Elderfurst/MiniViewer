@@ -1,15 +1,10 @@
 {
     "name": "MiniViewer",
     "version": "1.0",
-    "description": "A chrome extension that allows for picture in picture",
+    "description": "A chrome extension that allows for a picture-in-picture type window on various video streaming sites.",
     "background": {
         "scripts": ["background.js"],
         "persistent": false
-    },
-    "permissions": ["activeTab", "storage", "tabs", "system.display"],
-    "options_ui": {
-        "page": "config/config.html",
-        "chrome_style": true
     },
     "browser_action": {
         "default_icon": {
@@ -25,6 +20,7 @@
         "48": "images/icons/pip-48.png",
         "128": "images/icons/pip-128.png"
     },
+    "permissions": [ "<all_urls>" ],
     "manifest_version": 2
   }
   
